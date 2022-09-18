@@ -1,1 +1,0 @@
-# klazzy-react-amplify
