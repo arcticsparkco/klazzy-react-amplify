@@ -36,6 +36,8 @@ import Testimonials from "pages/LandingPages/FrontPageDeals/sections/Testimonial
 import Faq from "pages/LandingPages/FrontPageDeals/sections/Faq";
 import Contact from "pages/LandingPages/FrontPageDeals/sections/Contact";
 
+
+
 // Routes
 import routes from "routes";
 
@@ -47,6 +49,7 @@ const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
 function FrontPageDeals() {
 
     const [post, setPost] = useState(null);
+
     useEffect(() => {
       axios.get(baseURL).then((response) => {
         setPost(response.data);
@@ -56,33 +59,39 @@ function FrontPageDeals() {
     const [fpdeals, setFpdeals] = useState([
         {
           id: 1,
-          title: "This is first list",
-          description: "That's pretty impressive."
+          title: "Dog Deal",
+          description: "Pooch lovers rejoice!",
+          num_upvote: 5
         },
         {
           id: 2,
-          title: "This is second list",
-          description: "That's pretty impressive."
+          title: "Shoe Deal",
+          description: "Pretty shoes for the win",
+          num_upvote: 2
         },
         {
           id: 3,
-          title: "This is third list",
-          description: "That's pretty impressive."
+          title: "AWS Deal",
+          description: "50% off any new sign ups",
+          num_upvote: 15
         },
         {
           id: 4,
-          title: "This is first list",
-          description: "That's pretty impressive."
+          title: "Free games at epic",
+          description: "That's pretty impressive.",
+          num_upvote: 100
         },
         {
           id: 5,
-          title: "This is second list",
-          description: "That's pretty impressive."
+          title: "Get your PS5 now",
+          description: "Have you gotten yours?",
+          num_upvote: 12
         },
         {
           id: 6,
-          title: "This is third list",
-          description: "That's pretty impressive."
+          title: "Macbook 10pct off",
+          description: "That's pretty impressive.",
+          num_upvote: 5
         },
     ]);
 
@@ -91,7 +100,7 @@ function FrontPageDeals() {
         {id: 1, name: "Shoes", description: "Running Shoes" },
         {id: 2, name: "MacBook", description: "Apple MacBook" },
     ];
-  if (!fpdeals) return null;
+  if (!post) return null;
   return (
     <>
       <MKBox

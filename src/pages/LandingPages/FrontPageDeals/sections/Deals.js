@@ -52,7 +52,7 @@ function Deals({fpdeals}) {
 
             {fpdeals.map((deal) => {
                 return (
-                  <Grid item xs={12} md={4} lg={3}>
+                  <Grid item xs={12} md={4} lg={3} key={deal.id}>
                     <MKBox mt={5}>
                     <DealCard
                       image={product3}
