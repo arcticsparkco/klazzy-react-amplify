@@ -35,7 +35,6 @@ import FrontPageDeals from "pages/LandingPages/FrontPageDeals";
 // Material Kit 2 PRO React routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
-import routesCust from "routesCust";
 
 export default function App() {
   const { pathname } = useLocation();

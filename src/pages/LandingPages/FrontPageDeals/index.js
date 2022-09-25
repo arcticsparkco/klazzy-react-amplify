@@ -36,8 +36,6 @@ import Testimonials from "pages/LandingPages/FrontPageDeals/sections/Testimonial
 import Faq from "pages/LandingPages/FrontPageDeals/sections/Faq";
 import Contact from "pages/LandingPages/FrontPageDeals/sections/Contact";
 
-
-
 // Routes
 import routes from "routes";
 
@@ -93,7 +91,7 @@ function FrontPageDeals() {
         {id: 1, name: "Shoes", description: "Running Shoes" },
         {id: 2, name: "MacBook", description: "Apple MacBook" },
     ];
-  if (!post) return null;
+  if (!fpdeals) return null;
   return (
     <>
       <MKBox
