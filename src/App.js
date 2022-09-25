@@ -22,12 +22,20 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
+// Material Kit 2 PRO React examples
+import DefaultNavbar from "examples/Navbars/DefaultNavbar";
+import DefaultFooter from "examples/Footers/DefaultFooter";
+
+// Material Kit 2 PRO React components
+import MKBox from "components/MKBox";
 // Material Kit 2 PRO React themes
 import theme from "assets/theme";
-import Presentation from "layouts/pages/presentation";
+import FrontPageDeals from "pages/LandingPages/FrontPageDeals";
 
 // Material Kit 2 PRO React routes
 import routes from "routes";
+import footerRoutes from "footer.routes";
+import routesCust from "routesCust";
 
 export default function App() {
   const { pathname } = useLocation();
@@ -54,11 +62,21 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+
+      <DefaultNavbar
+        routes={routes}
+        transparent
+        light
+      />
+
       <Routes>
         {getRoutes(routes)}
-        <Route path="/presentation" element={<Presentation />} />
-        <Route path="*" element={<Navigate to="/presentation" />} />
+        <Route path="/" element={<FrontPageDeals />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
+      <MKBox pt={6} px={1} mt={6}>
+        <DefaultFooter content={footerRoutes} />
+      </MKBox>
     </ThemeProvider>
   );
 }
