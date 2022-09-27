@@ -15,8 +15,15 @@ Coded by www.creative-tim.com
 
 import { useEffect } from "react";
 
+
+
 // react-router components
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+
+
+import ReactGA from "react-ga4";
+import {Helmet} from "react-helmet";
+
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -32,9 +39,13 @@ import MKBox from "components/MKBox";
 import theme from "assets/theme";
 import FrontPageDeals from "pages/LandingPages/FrontPageDeals";
 
+
+
 // Material Kit 2 PRO React routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
+
+ReactGA.initialize("G-Y7ME825BDG");
 
 export default function App() {
   const { pathname } = useLocation();
@@ -58,22 +69,33 @@ export default function App() {
       return null;
     });
 
+  ReactGA.send("pageview");
+
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
 
-      <DefaultNavbar
-        routes={routes}
-      />
+    <>
+      <Helmet>
+        <title>klazzy shopper</title>
+        <meta name="description" content="shop smart. shop klazzy" />
+        <link rel="canonical" href="https://www.klazzy.net" />
+      </Helmet>
 
-      <Routes>
-        {getRoutes(routes)}
-        <Route path="/" element={<FrontPageDeals />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-      <MKBox pt={6} px={1} mt={6}>
-        <DefaultFooter content={footerRoutes} />
-      </MKBox>
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+  
+        <DefaultNavbar
+          routes={routes}
+        />
+  
+        <Routes>
+          {getRoutes(routes)}
+          <Route path="/" element={<FrontPageDeals />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+        <MKBox pt={6} px={1} mt={6}>
+          <DefaultFooter content={footerRoutes} />
+        </MKBox>
+      </ThemeProvider>
+    </>
   );
 }
