@@ -47,13 +47,8 @@ function DealsRightSide() {
         <Grid container spacing={3} sx={{ mt: 3 }}>
           <Grid item xs={12}>
             <MKBox mt={3}>
-              <SimpleBookingCard
-                image={product2}
-                title="Lovely and cosy apartment"
-                description="Siri's latest trick is offering a hands-free TV viewing experience, that will allow consumers to turn on or off their television, change inputs, fast forward."
-                categories={["Entire Apartment", "3 Guests", "2 Beds"]}
-                action={actionProps}
-              />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6947207965833207"
+     crossorigin="anonymous"></script>
             </MKBox>
           </Grid>
         </Grid>
