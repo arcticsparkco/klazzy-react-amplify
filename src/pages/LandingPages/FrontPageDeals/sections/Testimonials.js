@@ -13,89 +13,131 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import { useRef } from "react";
+
+// SwiperJS
+import SwiperCore, { Autoplay, Navigation } from "swiper";
+
+// SwiperJS react components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// SwiperJS styles
+import "swiper/css";
+import "swiper/css/navigation";
+
 // @mui material components
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
+import Icon from "@mui/material/Icon";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
-import MKBadge from "components/MKBadge";
 
-// Material Kit 2 PRO React components
-import SimpleReviewCard from "examples/Cards/ReviewCards/SimpleReviewCard";
+// Material Kit 2 PRO React examples
+import ComplexReviewCard from "examples/Cards/ReviewCards/ComplexReviewCard";
 
 // Images
-import bgPattern from "assets/images/shapes/pattern-lines.svg";
-import team2 from "assets/images/team-2.jpg";
-import team3 from "assets/images/team-3.jpg";
-import team4 from "assets/images/team-4.jpg";
+import review1 from "assets/images/examples/clem-onojegaw.jpg";
+import review2 from "assets/images/examples/studio-3.jpg";
+import logoSpotify from "assets/images/logos/small-logos/logo-spotify.svg";
+import logoSlack from "assets/images/logos/small-logos/logo-slack.svg";
 
 function Testimonials() {
+  // install SwiperJS modules
+  SwiperCore.use([Autoplay, Navigation]);
+
+  // Swiper navigation buttons styles
+  const navigationStyles = {
+    position: "absolute",
+    top: 0,
+    zIndex: 1,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "15%",
+    height: "100%",
+    textAlign: "center",
+    opacity: 0.5,
+    cursor: "pointer",
+    transition: "opacity 0.15s ease",
+
+    "&:hover, &:focus": {
+      opacity: 1,
+    },
+  };
+
+  // SwiperJS navigation buttons ref
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
+
   return (
-    <MKBox position="relative" variant="gradient" bgColor="dark" mt={6} py={2} mx={-2}>
-      <MKBox
-        component="img"
-        src={bgPattern}
-        alt="background-pattern"
-        position="absolute"
-        top={0}
-        left={0}
-        width="100%"
-        opacity={0.2}
-        display={{ xs: "none", md: "block" }}
-      />
-      <Container>
-        <Grid
-          container
-          justifyContent="center"
-          sx={{ pt: 8, pb: 5, position: "relative", zIndex: 3 }}
+    <MKBox py={8} position="relative">
+      <Swiper
+        onInit={({ params, navigation }) => {
+          const { navigation: nav } = params;
+
+          nav.prevEl = navigationPrevRef.current;
+          nav.nextEl = navigationNextRef.current;
+          navigation.init();
+          navigation.update();
+        }}
+        autoplay={{ delay: 5000 }}
+        speed={800}
+        spaceBetween={0}
+        slidesPerView={1}
+        loop
+      >
+        <SwiperSlide>
+          <Container>
+            <ComplexReviewCard
+              image={review1}
+              title="Excelent payment service. You guys are the best!"
+              review="Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success."
+              author={{
+                logo: logoSpotify,
+                name: "Mathew Glock",
+                role: "Marketing Manager - Spotify",
+              }}
+            />
+          </Container>
+        </SwiperSlide>
+        <SwiperSlide>
+          <Container>
+            <ComplexReviewCard
+              image={review2}
+              title="Awesome services! Fast and secure."
+              review="Wealth creation is an evolutionarily recent positive-sum game. Status is an old zero-sum game. Those attacking wealth creation are often just seeking status."
+              author={{
+                logo: logoSlack,
+                name: "Mathew Glock",
+                role: "CFO - Slack",
+              }}
+            />
+          </Container>
+        </SwiperSlide>
+        <MKTypography
+          variant="h2"
+          color="dark"
+          sx={{
+            ...navigationStyles,
+            left: 0,
+          }}
+          ref={navigationPrevRef}
         >
-          <Grid item xs={12} md={6} sx={{ textAlign: "center" }}>
-            <MKBadge
-              badgeContent="testimonials"
-              variant="contained"
-              color="white"
-              size="sm"
-              container
-              sx={{ mb: 1 }}
-            />
-            <MKTypography variant="h2" color="white" mb={1}>
-              Some thoughts from our clients
-            </MKTypography>
-            <MKTypography variant="body1" color="white" fontWeight="light">
-              If you&apos;re selected for them you&apos;ll also get three tickets, opportunity to
-              access Investor Office Hours and Mentor Hours and much more all for free.
-            </MKTypography>
-          </Grid>
-        </Grid>
-        <Grid container spacing={3} sx={{ mt: 10, mb: 6 }}>
-          <Grid item xs={12} md={4}>
-            <SimpleReviewCard
-              image={team2}
-              name="Olivia Harper"
-              username="oliviaharper"
-              review="The connections you make at Web Summit are unparalleled, we met users all over the world."
-            />
-          </Grid>
-          <Grid item xs={12} md={4} sx={{ mt: { xs: 12, md: 0 } }}>
-            <SimpleReviewCard
-              image={team3}
-              name="Simon Lauren"
-              username="simonlaurent"
-              review="The networking at Web Summit is like no other European tech conference. Everything is amazing."
-            />
-          </Grid>
-          <Grid item xs={12} md={4} sx={{ mt: { xs: 12, md: 0 } }}>
-            <SimpleReviewCard
-              image={team4}
-              name="Lucian Eurel"
-              username="luciaeurel"
-              review="Web Summit will increase your appetite, your inspiration, your motivation and your network."
-            />
-          </Grid>
-        </Grid>
-      </Container>
+          <Icon>chevron_left</Icon>
+        </MKTypography>
+        <MKTypography
+          variant="h2"
+          color="dark"
+          sx={{
+            ...navigationStyles,
+            right: 0,
+          }}
+          ref={navigationNextRef}
+        >
+          <Icon>chevron_right</Icon>
+        </MKTypography>
+      </Swiper>
     </MKBox>
   );
 }

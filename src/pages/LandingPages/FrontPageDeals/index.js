@@ -27,6 +27,7 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 
+import Header from "pages/LandingPages/FrontPageDeals/sections/Header";
 
 // FrontPageDeals page sections
 import Search from "pages/LandingPages/FrontPageDeals/sections/Search";
@@ -103,22 +104,27 @@ function FrontPageDeals() {
   if (!post) return null;
   return (
     <>
+      <Header />
       <MKBox
-        minHeight="25vh"
+        minHeight="15vh"
         width="100%"
         sx={{
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
             `${linearGradient(
-              rgba(gradients.dark.main, 0.0),
-              rgba(gradients.dark.state, 0.5)
-            )}, url(${bgImage})`,
+              rgba(gradients.warning.main, 0.99),
+              rgba(gradients.warning.state, 0.5)
+            )}, url()`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "grid",
           placeItems: "center",
         }}
       >
+
+
         <Container>
+
+
           <Grid
             container
             item
@@ -142,20 +148,26 @@ function FrontPageDeals() {
           </Grid>
         </Container>
       </MKBox>
-      <Card
-        sx={{
-          p: 2,
-          mx: { xs: 2, lg: 3 },
-          mt: -8,
-          mb: 4,
-          backgroundColor: ({ palette: { white }, functions: { rgba } }) => rgba(white.main, 0.8),
-          backdropFilter: "saturate(200%) blur(30px)",
-          boxShadow: ({ boxShadows: { xxl } }) => xxl,
-          overflow: "hidden",
-        }}
-      >
 
-        <Grid container spacing={3} sx={{ mt: 3 }}>
+      <MKBox mt={5}>
+        <Grid container spacing={3}>
+          <Grid item xs={6} lg={2}>
+            <MKBox ml={3} mt={2}>
+              <MKTypography variant="h4" component="p" color="text">
+                精選優惠
+              </MKTypography>
+            </MKBox>
+          </Grid>
+          <Grid item xs={6} lg={2}>
+            <MKBox ml={3} mt={2}>
+              <MKTypography variant="h4" component="p" color="text">
+                查看所有
+              </MKTypography>
+            </MKBox>
+          </Grid>
+        </Grid>
+
+        <Grid container spacing={3}>
           <Grid item xs={12} lg={10}>
             <Deals fpdeals={fpdeals}/>
           </Grid>
@@ -164,11 +176,43 @@ function FrontPageDeals() {
 
           </Grid>
         </Grid>
-
-      </Card>
-
+      </MKBox>
 
 
+      <MKBox mt={2}>
+        <Grid container spacing={3}>
+          <Grid item xs={6} lg={2}>
+            <MKBox ml={3} mt={2}>
+              <MKTypography variant="h4" component="p" color="text">
+                精選文章
+              </MKTypography>
+            </MKBox>
+          </Grid>
+          <Grid item xs={6} lg={2}>
+            <MKBox ml={3} mt={2}>
+              <MKTypography variant="h4" component="p" color="text">
+                查看所有
+              </MKTypography>
+            </MKBox>
+          </Grid>
+        </Grid>
+
+        <Grid container spacing={3}>
+          <Grid item xs={12} lg={10}>
+            {/*<Deals fpdeals={fpdeals}/>*/}
+          </Grid>
+          <Grid item xs={12} lg={2}>
+            {/*<DealsRightSide />*/}
+
+          </Grid>
+        </Grid>
+      </MKBox>
+
+      
+
+
+
+      {/*
       <Card
         sx={{
           p: 2,
@@ -181,12 +225,13 @@ function FrontPageDeals() {
           overflow: "hidden",
         }}
       >
+      */}
         
         {/*<Search />*/}
 
-        {/*<Testimonials />*/}
-        <Faq />
-      </Card>
+        <Testimonials />
+        {/*<Faq />*/}
+      {/*</Card>*/}
 
     </>
   );

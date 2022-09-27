@@ -77,17 +77,7 @@ function AboutUs() {
 
   return (
     <>
-      <DefaultNavbar
-        routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-pro-react",
-          label: "buy now",
-          color: "default",
-        }}
-        transparent
-        light
-      />
+
       <MKBox
         ref={headerRef}
         minHeight="75vh"
@@ -167,9 +157,7 @@ function AboutUs() {
         <Featuring />
         <Newsletter />
       </Card>
-      <MKBox pt={6} px={1} mt={6}>
-        <DefaultFooter content={footerRoutes} />
-      </MKBox>
+
     </>
   );
 }

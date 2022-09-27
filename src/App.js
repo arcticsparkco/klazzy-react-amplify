@@ -64,8 +64,6 @@ export default function App() {
 
       <DefaultNavbar
         routes={routes}
-        transparent
-        light
       />
 
       <Routes>

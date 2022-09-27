@@ -4,88 +4,90 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
+import AboutUs from "layouts/pages/company/about-us";
+
+import ContactUs from "layouts/pages/support/contact-us";
+import Faq from "layouts/pages/support/faq";
+import Privacy from "layouts/pages/support/privacy";
+
+
+
 // Material Kit 2 PRO React components
 import MKTypography from "components/MKTypography";
 
 // Images
-import logoCT from "assets/images/logo-ct-dark.png";
+import logoKlazzy from "assets/images/logo-klazzy-solid.png";
 
 const date = new Date().getFullYear();
 
 export default {
   brand: {
-    name: "Material Kit 2 PRO",
-    image: logoCT,
+    name: "klazzy",
+    image: logoKlazzy,
     route: "/",
   },
   socials: [
     {
       icon: <FacebookIcon />,
-      link: "https://www.facebook.com/CreativeTim/",
-    },
-    {
-      icon: <TwitterIcon />,
-      link: "https://twitter.com/creativetim",
-    },
-    {
-      icon: <GitHubIcon />,
-      link: "https://github.com/creativetimofficial",
+      link: "https://www.facebook.com/go_klazzy/",
     },
     {
       icon: <YouTubeIcon />,
-      link: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
+      link: "https://www.youtube.com/channel/go_klazzy",
     },
   ],
   menus: [
     {
       name: "company",
       items: [
-        { name: "about us", href: "https://www.creative-tim.com/presentation" },
-        { name: "freebies", href: "https://www.creative-tim.com/templates/free" },
-        { name: "premium tools", href: "https://www.creative-tim.com/templates/premium" },
-        { name: "blog", href: "https://www.creative-tim.com/blog" },
+        {   
+          name: "about us",
+          route: "/pages/company/about-us",
+          component: <AboutUs />,
+        },
+        {
+          name: "privacy",
+          route: "/pages/support/privacy",
+          component: <Privacy />,
+        },
+        {
+          name: "contact us",
+          route: "/pages/support/contact-us",
+          component: <ContactUs />,
+        },
+        
       ],
     },
     {
-      name: "resources",
+      name: "browse",
       items: [
-        { name: "illustrations", href: "https://iradesign.io/" },
-        { name: "bits & snippets", href: "https://www.creative-tim.com/bits" },
-        { name: "affiliate program", href: "https://www.creative-tim.com/affiliates/new" },
-      ],
-    },
-    {
-      name: "help & support",
-      items: [
-        { name: "contact us", href: "https://www.creative-tim.com/contact-us" },
-        { name: "knowledge center", href: "https://www.creative-tim.com/knowledge-center" },
-        { name: "custom development", href: "https://services.creative-tim.com/" },
-        { name: "sponsorships", href: "https://www.creative-tim.com/sponsorships" },
-      ],
-    },
-    {
-      name: "legal",
-      items: [
-        { name: "terms & conditions", href: "https://www.creative-tim.com/terms" },
-        { name: "privacy policy", href: "https://www.creative-tim.com/privacy" },
-        { name: "licenses (EULA)", href: "https://www.creative-tim.com/license" },
+        {
+          name: "By Deal",
+          route: "/pages/support/contact-us",
+          component: <ContactUs />,
+        },
+        {
+          name: "By Credit Card",
+          route: "/pages/support/contact-us",
+          component: <ContactUs />,
+        },
       ],
     },
   ],
   copyright: (
     <MKTypography variant="button" fontWeight="regular">
-      All rights reserved. Copyright &copy; {date} Material Kit by{" "}
+      Copyright &copy; {date} {" "}
       <MKTypography
         component="a"
-        href="https://www.creative-tim.com"
+        href="https://www.klazzy.net"
         target="_blank"
         rel="noreferrer"
         variant="button"
         fontWeight="regular"
       >
-        Creative Tim
+        Klazzy
       </MKTypography>
-      .
+
     </MKTypography>
   ),
 };

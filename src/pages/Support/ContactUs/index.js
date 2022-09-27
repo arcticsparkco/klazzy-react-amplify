@@ -13,8 +13,12 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import { useEffect, useRef } from "react";
+
+
 // @mui material components
 import Grid from "@mui/material/Grid";
+import Container from "@mui/material/Container";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
@@ -34,38 +38,33 @@ import footerRoutes from "footer.routes";
 import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 
 function ContactUs() {
+  const headerRef = useRef(null);
+
+
   return (
     <>
-      <MKBox position="fixed" top="0.5rem" width="100%">
-        <DefaultNavbar
-          routes={routes}
-          action={{
-            type: "external",
-            route: "https://www.creative-tim.com/product/material-kit-pro-react",
-            label: "buy now",
-            color: "info",
-          }}
-        />
-      </MKBox>
+      <MKBox
+        ref={headerRef}
+        minHeight="75vh"
+        width="100%"
+        sx={{
+          backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
+            `${linearGradient(
+              rgba(gradients.dark.main, 0.6),
+              rgba(gradients.dark.state, 0.6)
+            )}, url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          display: "grid",
+          placeItems: "center",
+        }}
+      >
+        <Container>
       <Grid container spacing={3} alignItems="center">
-        <Grid item xs={12} lg={6}>
-          <MKBox
-            display={{ xs: "none", lg: "flex" }}
-            width="calc(100% - 2rem)"
-            height="calc(100vh - 2rem)"
-            borderRadius="lg"
-            ml={2}
-            mt={2}
-            sx={{ backgroundImage: `url(${bgImage})` }}
-          />
-        </Grid>
+
         <Grid
           item
           xs={12}
-          sm={10}
-          md={7}
-          lg={6}
-          xl={4}
           ml={{ xs: "auto", lg: 6 }}
           mr={{ xs: "auto", lg: 6 }}
         >
@@ -95,8 +94,8 @@ function ContactUs() {
             </MKBox>
             <MKBox p={3}>
               <MKTypography variant="body2" color="text" mb={3}>
-                For further questions, including partnership opportunities, please email
-                hello@creative-tim.com or contact using our contact form.
+                For further questions, please email
+                info@klazzy.net or contact using our contact form.
               </MKTypography>
               <MKBox width="100%" component="form" method="post" autocomplete="off">
                 <Grid container spacing={3}>
@@ -139,8 +138,7 @@ function ContactUs() {
           </MKBox>
         </Grid>
       </Grid>
-      <MKBox pt={6} px={1} mt={6}>
-        <DefaultFooter content={footerRoutes} />
+        </Container>
       </MKBox>
     </>
   );

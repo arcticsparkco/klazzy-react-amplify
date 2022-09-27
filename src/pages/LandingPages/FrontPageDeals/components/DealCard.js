@@ -46,42 +46,38 @@ function DealCard({ image, title, description, action }) {
 
   return (
     <Card>
-      <MKBox position="relative" borderRadius="lg" mx={2} mt={-2}>
+      <MKBox position="relative" borderRadius="lg" mx={2} mt={2}>
+        <MKBox mt={1} mb={1}>
+          <MKTypography variant="caption" component="p" color="text">
+            Deal found by klazzy
+          </MKTypography>
+          <MKTypography variant="caption" component="p" color="text">
+            1d ago
+          </MKTypography>
+        </MKBox>
+
         <MKBox
           component="img"
           src={image}
           alt={title}
           borderRadius="lg"
-          shadow="md"
           width="100%"
           position="relative"
-          zIndex={1}
-        />
-        <MKBox
-          borderRadius="lg"
-          shadow="md"
-          width="100%"
-          height="100%"
-          position="absolute"
-          left={0}
-          top={0}
-          sx={{
-            backgroundImage: `url(${image})`,
-            transform: "scale(0.94)",
-            filter: "blur(12px)",
-            backgroundSize: "cover",
-          }}
         />
       </MKBox>
-      <MKBox p={3} mt={3}>
-        <MKTypography display="inline" variant="h4" textTransform="capitalize">
+      <MKBox p={2} mt={0}>
+        <MKTypography display="inline" variant="h6" textTransform="capitalize">
           {title}
         </MKTypography>
         <MKBox mt={1} mb={3}>
-          <MKTypography variant="body2" component="p" color="text">
+          <MKTypography variant="caption" component="p" color="text">
             {description}
           </MKTypography>
         </MKBox>
+        <hr/>
+        <MKBox mt={1}>
+        <Icon sx={{ fontWeight: "bold" }}>thumb_up</Icon>
+        <Icon sx={{ fontWeight: "bold" }}>comment</Icon>
         {action.type === "external" ? (
           <MKTypography
             component={MuiLink}
@@ -109,6 +105,7 @@ function DealCard({ image, title, description, action }) {
             <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
           </MKTypography>
         )}
+        </MKBox>
       </MKBox>
     </Card>
   );

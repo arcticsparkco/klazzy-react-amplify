@@ -46,16 +46,16 @@ function Deals({fpdeals}) {
   };
 
   return (
-    <MKBox component="section" py={3}>
+    <MKBox component="section" py={1}>
       <Container>
-        <Grid container spacing={1} sx={{ mt: 3 }}>
+        <Grid container spacing={2}>
 
             {fpdeals.map((deal) => {
                 return (
                   <Grid item xs={12} md={4} lg={3} key={deal.id}>
                     <MKBox mt={5}>
                     <DealCard
-                      image={product3}
+                      image="https://picsum.photos/200"
                       title={deal.title}
                       description={deal.description}
                       action={{
@@ -73,23 +73,7 @@ function Deals({fpdeals}) {
 
 
         </Grid>
-        <MKBox mt={5}>
-          <MKPagination>
-            <MKPagination item>
-              <Icon>keyboard_arrow_left</Icon>
-            </MKPagination>
-            <MKPagination item active>
-              1
-            </MKPagination>
-            <MKPagination item>2</MKPagination>
-            <MKPagination item>3</MKPagination>
-            <MKPagination item>4</MKPagination>
-            <MKPagination item>5</MKPagination>
-            <MKPagination item>
-              <Icon>keyboard_arrow_right</Icon>
-            </MKPagination>
-          </MKPagination>
-        </MKBox>
+
       </Container>
     </MKBox>
   );

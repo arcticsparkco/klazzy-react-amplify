@@ -43,6 +43,9 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Material Kit 2 PRO React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
+import logo from "assets/images/logo-klazzy-solid.png";
+
+
 function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
@@ -454,21 +457,17 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
       <MKBox
         py={1}
         px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
-        my={relative ? 0 : 2}
-        mx={relative ? 0 : 3}
-        width={relative ? "100%" : "calc(100% - 48px)"}
-        borderRadius="xl"
-        shadow={transparent ? "none" : "md"}
+        width={"100%"}
         color={light ? "white" : "dark"}
-        position={relative ? "relative" : "absolute"}
-        left={0}
+        position={"relative"}
         zIndex={3}
         sx={({ palette: { transparent: transparentColor, white }, functions: { rgba } }) => ({
-          backgroundColor: transparent ? transparentColor.main : rgba(white.main, 0.8),
-          backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
         })}
       >
         <MKBox display="flex" justifyContent="space-between" alignItems="center">
+
+
+
           <MKBox
             component={Link}
             to="/"
@@ -476,9 +475,16 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             py={transparent ? 1.5 : 0.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >
+            <MKBox
+              component="img"
+              src={logo}
+              height={"3vh"}
+            />
+            {/*
             <MKTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
               {brand}
             </MKTypography>
+            */}
           </MKBox>
           <MKBox
             color="inherit"
