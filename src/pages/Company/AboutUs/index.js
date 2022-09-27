@@ -31,19 +31,12 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
-// Material Kit 2 PRO React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-import DefaultFooter from "examples/Footers/DefaultFooter";
-
 // About Us page sections
 import Information from "pages/Company/AboutUs/sections/Information";
 import Team from "pages/Company/AboutUs/sections/Team";
 import Featuring from "pages/Company/AboutUs/sections/Featuring";
 import Newsletter from "pages/Company/AboutUs/sections/Newsletter";
 
-// Routes
-import routes from "routes";
-import footerRoutes from "footer.routes";
 
 // Images
 import bgImage from "assets/images/bg-about-us.jpg";
