@@ -32,6 +32,7 @@ import Header from "pages/LandingPages/FrontPageDeals/sections/Header";
 // FrontPageDeals page sections
 import Search from "pages/LandingPages/FrontPageDeals/sections/Search";
 import Deals from "pages/LandingPages/FrontPageDeals/sections/Deals";
+import Articles from "pages/LandingPages/FrontPageDeals/sections/Articles";
 import DealsRightSide from "pages/LandingPages/FrontPageDeals/sections/DealsRightSide";
 import Testimonials from "pages/LandingPages/FrontPageDeals/sections/Testimonials";
 import Faq from "pages/LandingPages/FrontPageDeals/sections/Faq";
@@ -107,6 +108,7 @@ function FrontPageDeals() {
       <Header />
       <MKBox
         minHeight="15vh"
+
         width="100%"
         sx={{
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
@@ -149,8 +151,12 @@ function FrontPageDeals() {
         </Container>
       </MKBox>
 
-      <MKBox mt={5}>
-        <Grid container spacing={3}>
+      <MKBox 
+        mt={5} 
+        pb={5}
+        
+      >
+        <Grid container spacing={3} >
           <Grid item xs={6} lg={2}>
             <MKBox ml={3} mt={2}>
               <MKTypography variant="h4" component="p" color="text">
@@ -178,60 +184,12 @@ function FrontPageDeals() {
         </Grid>
       </MKBox>
 
-
-      <MKBox mt={2}>
-        <Grid container spacing={3}>
-          <Grid item xs={6} lg={2}>
-            <MKBox ml={3} mt={2}>
-              <MKTypography variant="h4" component="p" color="text">
-                精選文章
-              </MKTypography>
-            </MKBox>
-          </Grid>
-          <Grid item xs={6} lg={2}>
-            <MKBox ml={3} mt={2}>
-              <MKTypography variant="h4" component="p" color="text">
-                查看所有
-              </MKTypography>
-            </MKBox>
-          </Grid>
-        </Grid>
-
-        <Grid container spacing={3}>
-          <Grid item xs={12} lg={10}>
-            {/*<Deals fpdeals={fpdeals}/>*/}
-          </Grid>
-          <Grid item xs={12} lg={2}>
-            {/*<DealsRightSide />*/}
-
-          </Grid>
-        </Grid>
-      </MKBox>
-
-      
+      <Articles fpdeals={fpdeals}/>
 
 
 
-      {/*
-      <Card
-        sx={{
-          p: 2,
-          mx: { xs: 2, lg: 3 },
-          mt: 0,
-          mb: 4,
-          backgroundColor: ({ palette: { white }, functions: { rgba } }) => rgba(white.main, 0.8),
-          backdropFilter: "saturate(200%) blur(30px)",
-          boxShadow: ({ boxShadows: { xxl } }) => xxl,
-          overflow: "hidden",
-        }}
-      >
-      */}
-        
-        {/*<Search />*/}
 
-        <Testimonials />
-        {/*<Faq />*/}
-      {/*</Card>*/}
+
 
     </>
   );

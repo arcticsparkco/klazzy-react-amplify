@@ -93,7 +93,9 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <MKBox pt={6} px={1} mt={6}>
-          <DefaultFooter content={footerRoutes} />
+          <DefaultFooter 
+            content={footerRoutes} 
+          />
         </MKBox>
       </ThemeProvider>
     </>

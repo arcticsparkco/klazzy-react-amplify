@@ -456,7 +456,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
     <Container sx={sticky ? { position: "sticky", top: 0, zIndex: 10 } : null}>
       <MKBox
         py={1}
-        px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
+        px={2}
         width={"100%"}
         color={light ? "white" : "dark"}
         position={"relative"}
@@ -472,6 +472,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             component={Link}
             to="/"
             lineHeight={1}
+            mt={1}
             py={transparent ? 1.5 : 0.75}
             pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}
           >

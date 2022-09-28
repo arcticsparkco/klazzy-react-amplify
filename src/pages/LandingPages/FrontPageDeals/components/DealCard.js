@@ -21,12 +21,27 @@ import PropTypes from "prop-types";
 
 // @mui material components
 import Card from "@mui/material/Card";
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
 import Icon from "@mui/material/Icon";
 import MuiLink from "@mui/material/Link";
+import IconButton, { IconButtonProps } from '@mui/material/IconButton';
+
+
+import Avatar from '@mui/material/Avatar';
+
+import { red } from '@mui/material/colors';
+
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 function DealCard({ image, title, description, action }) {
   const cardActionStyles = {
@@ -45,27 +60,32 @@ function DealCard({ image, title, description, action }) {
   };
 
   return (
-    <Card>
-      <MKBox position="relative" borderRadius="lg" mx={2} mt={2}>
-        <MKBox mt={1} mb={1}>
-          <MKTypography variant="caption" component="p" color="text">
-            Deal found by klazzy
-          </MKTypography>
-          <MKTypography variant="caption" component="p" color="text">
-            1d ago
-          </MKTypography>
-        </MKBox>
+    <Card 
+      sx={{ maxWidth: 300 }}
+    >
 
-        <MKBox
-          component="img"
-          src={image}
-          alt={title}
-          borderRadius="lg"
-          width="100%"
-          position="relative"
-        />
-      </MKBox>
-      <MKBox p={2} mt={0}>
+      <CardHeader
+        avatar={
+          <Avatar sx={{ bgcolor: red[500] , maxWidth:20, maxHeight:20}} aria-label="recipe" >
+            S
+          </Avatar>
+        }
+
+        title="chief editior"
+        subheader="September 14, 2022"
+        titleTypographyProps={{variant:'caption' }}
+        subheaderTypographyProps={{variant:'caption' }}
+      />
+
+      <CardMedia
+        component="img"
+        height="200"
+        image={image}
+        alt={title}
+      />
+
+
+      <CardContent>
         <MKTypography display="inline" variant="h6" textTransform="capitalize">
           {title}
         </MKTypography>
@@ -74,10 +94,23 @@ function DealCard({ image, title, description, action }) {
             {description}
           </MKTypography>
         </MKBox>
-        <hr/>
+
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <Icon sx={{ fontWeight: "bold" }}>thumb_up</Icon>
+        </IconButton>
+        <IconButton aria-label="share">
+          <Icon sx={{ fontWeight: "bold" }}>comment</Icon>
+        </IconButton>
+        <IconButton aria-label="share">
+          <Icon sx={{ fontWeight: "bold" }}>share</Icon>
+        </IconButton>
+
+      </CardActions>
+
+      {/*
         <MKBox mt={1}>
-        <Icon sx={{ fontWeight: "bold" }}>thumb_up</Icon>
-        <Icon sx={{ fontWeight: "bold" }}>comment</Icon>
         {action.type === "external" ? (
           <MKTypography
             component={MuiLink}
@@ -106,7 +139,9 @@ function DealCard({ image, title, description, action }) {
           </MKTypography>
         )}
         </MKBox>
-      </MKBox>
+
+      */}
+
     </Card>
   );
 }
