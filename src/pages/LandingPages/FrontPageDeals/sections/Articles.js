@@ -16,45 +16,20 @@ Coded by www.creative-tim.com
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
-
-import Icon from "@mui/material/Icon";
+// import Card from "@mui/material/Card";
+// import Icon from "@mui/material/Icon";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-// Material Kit 2 PRO React components
-import SimpleBookingCard from "examples/Cards/BookingCards/SimpleBookingCard";
-
-import DealCard from "pages/LandingPages/FrontPageDeals/components/DealCard";
-
-// Images
-import product1 from "assets/images/products/product-1-min.jpg";
-import product2 from "assets/images/products/product-2-min.jpg";
-import product3 from "assets/images/products/product-3-min.jpg";
-import product4 from "assets/images/products/product-5-min.jpg";
-import product5 from "assets/images/products/product-6-min.jpg";
-import product6 from "assets/images/products/product-7-min.jpg";
-
 // Material Kit 2 PRO React examples
 import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 
-// Images
 import team1 from "assets/images/team-5.jpg";
-import team2 from "assets/images/bruce-mars.jpg";
-import team3 from "assets/images/ivana-squares.jpg";
-import team4 from "assets/images/ivana-square.jpg";
-
 
 
 function Articles({fpdeals}) {
-  const actionProps = {
-    type: "internal",
-    route: "/pages/landing-pages/rental",
-    color: "info",
-    label: "from / night",
-  };
 
   return (
     <MKBox
@@ -96,7 +71,7 @@ function Articles({fpdeals}) {
                     <MKBox mb={1}>
                       <HorizontalTeamCard
                         image={team1}
-                        name={deal.title}
+                        name={deal.name}
                         position={{ color: "info", label: "Hot Deal" }}
                         description={deal.description}
                       />

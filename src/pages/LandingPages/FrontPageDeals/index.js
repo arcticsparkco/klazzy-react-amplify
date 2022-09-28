@@ -20,7 +20,7 @@ import axios from "axios";
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
+// import Card from "@mui/material/Card";
 
 // Material Kit 2 PRO React components
 import MKBox from "components/MKBox";
@@ -30,23 +30,17 @@ import MKTypography from "components/MKTypography";
 import Header from "pages/LandingPages/FrontPageDeals/sections/Header";
 
 // FrontPageDeals page sections
-import Search from "pages/LandingPages/FrontPageDeals/sections/Search";
+// import Search from "pages/LandingPages/FrontPageDeals/sections/Search";
 import Deals from "pages/LandingPages/FrontPageDeals/sections/Deals";
 import Articles from "pages/LandingPages/FrontPageDeals/sections/Articles";
-import DealsRightSide from "pages/LandingPages/FrontPageDeals/sections/DealsRightSide";
-import Testimonials from "pages/LandingPages/FrontPageDeals/sections/Testimonials";
-import Faq from "pages/LandingPages/FrontPageDeals/sections/Faq";
-import Contact from "pages/LandingPages/FrontPageDeals/sections/Contact";
+// import Testimonials from "pages/LandingPages/FrontPageDeals/sections/Testimonials";
+// import Faq from "pages/LandingPages/FrontPageDeals/sections/Faq";
+// import Contact from "pages/LandingPages/FrontPageDeals/sections/Contact";
 
-
-
-// Routes
-import routes from "routes";
-
-// Images
-import bgImage from "assets/images/bg-rental.jpeg";
 
 const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
+
+const dealURL = "http://0.0.0.0:5000/api/v1/deals/";
 
 function FrontPageDeals() {
 
@@ -58,51 +52,17 @@ function FrontPageDeals() {
       });
     }, []);
 
-    const [fpdeals, setFpdeals] = useState([
-        {
-          id: 1,
-          title: "Dog Deal",
-          description: "Pooch lovers rejoice!",
-          num_upvote: 5
-        },
-        {
-          id: 2,
-          title: "Shoe Deal",
-          description: "Pretty shoes for the win",
-          num_upvote: 2
-        },
-        {
-          id: 3,
-          title: "AWS Deal",
-          description: "50% off any new sign ups",
-          num_upvote: 15
-        },
-        {
-          id: 4,
-          title: "Free games at epic",
-          description: "That's pretty impressive.",
-          num_upvote: 100
-        },
-        {
-          id: 5,
-          title: "Get your PS5 now",
-          description: "Have you gotten yours?",
-          num_upvote: 12
-        },
-        {
-          id: 6,
-          title: "Macbook 10pct off",
-          description: "That's pretty impressive.",
-          num_upvote: 5
-        },
-    ]);
+    const [fpdeals, setFpdeals] = useState(null);
+
+    useEffect(() => {
+      axios.get(dealURL).then((response) => {
+        setFpdeals(response.data);
+      });
+    }, []);
 
 
-  const products = [
-        {id: 1, name: "Shoes", description: "Running Shoes" },
-        {id: 2, name: "MacBook", description: "Apple MacBook" },
-    ];
   if (!post) return null;
+  if (!fpdeals) return null;
   return (
     <>
       <Header />
@@ -151,45 +111,9 @@ function FrontPageDeals() {
         </Container>
       </MKBox>
 
-      <MKBox 
-        mt={5} 
-        pb={5}
-        
-      >
-        <Grid container spacing={3} >
-          <Grid item xs={6} lg={2}>
-            <MKBox ml={3} mt={2}>
-              <MKTypography variant="h4" component="p" color="text">
-                精選優惠
-              </MKTypography>
-            </MKBox>
-          </Grid>
-          <Grid item xs={6} lg={2}>
-            <MKBox ml={3} mt={2}>
-              <MKTypography variant="h4" component="p" color="text">
-                查看所有
-              </MKTypography>
-            </MKBox>
-          </Grid>
-        </Grid>
-
-        <Grid container spacing={3}>
-          <Grid item xs={12} lg={10}>
-            <Deals fpdeals={fpdeals}/>
-          </Grid>
-          <Grid item xs={12} lg={2}>
-            <DealsRightSide />
-
-          </Grid>
-        </Grid>
-      </MKBox>
-
+      <Deals fpdeals={fpdeals}/>
       <Articles fpdeals={fpdeals}/>
-
-
-
-
-
+      
 
     </>
   );

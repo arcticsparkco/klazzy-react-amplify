@@ -26,8 +26,8 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Icon from "@mui/material/Icon";
-import MuiLink from "@mui/material/Link";
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
+// import MuiLink from "@mui/material/Link";
+import IconButton from '@mui/material/IconButton';
 
 
 import Avatar from '@mui/material/Avatar';
@@ -39,25 +39,7 @@ import { red } from '@mui/material/colors';
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-
-function DealCard({ image, title, description, action }) {
-  const cardActionStyles = {
-    display: "flex",
-    alignItems: "center",
-
-    "& .material-icons, .material-icons-round,": {
-      transform: "translateX(2px)",
-      transition: "transform 0.2s cubic-bezier(0.34,1.61,0.7,1.3)",
-    },
-
-    "&:hover .material-icons, &:focus .material-icons, &:hover .material-icons-round, &:focus .material-icons-round":
-      {
-        transform: "translateX(6px)",
-      },
-  };
+function DealCard({ image, title, description, owner, action }) {
 
   return (
     <Card 
@@ -71,7 +53,7 @@ function DealCard({ image, title, description, action }) {
           </Avatar>
         }
 
-        title="chief editior"
+        title={owner}
         subheader="September 14, 2022"
         titleTypographyProps={{variant:'caption' }}
         subheaderTypographyProps={{variant:'caption' }}
@@ -150,6 +132,7 @@ function DealCard({ image, title, description, action }) {
 DealCard.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  owner: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   action: PropTypes.shape({
     type: PropTypes.oneOf(["external", "internal"]).isRequired,
