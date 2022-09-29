@@ -29,7 +29,7 @@ import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 import team1 from "assets/images/team-5.jpg";
 
 
-function Articles({fpdeals}) {
+function Articles({blogposts}) {
 
   return (
     <MKBox
@@ -64,16 +64,16 @@ function Articles({fpdeals}) {
         </Grid>
         <Grid container spacing={3}>
 
-            {fpdeals.map((deal) => {
+            {blogposts.map((blogpost) => {
                 return (
 
                   <Grid item xs={12} lg={6}>
                     <MKBox mb={1}>
                       <HorizontalTeamCard
                         image={team1}
-                        name={deal.name}
+                        name={blogpost.title}
                         position={{ color: "info", label: "Hot Deal" }}
-                        description={deal.description}
+                        description={blogpost.contents}
                       />
                     </MKBox>
                   </Grid>

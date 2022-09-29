@@ -37,32 +37,62 @@ import Articles from "pages/LandingPages/FrontPageDeals/sections/Articles";
 // import Faq from "pages/LandingPages/FrontPageDeals/sections/Faq";
 // import Contact from "pages/LandingPages/FrontPageDeals/sections/Contact";
 
-
 const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
 
-const dealURL = "http://0.0.0.0:5000/api/v1/deals/";
+const blogpostsURL = "http://0.0.0.0:5000/api/v1/blogposts/";
+const dealsURL = "http://0.0.0.0:5000/api/v1/deals/";
 
 function FrontPageDeals() {
 
-    const [post, setPost] = useState(null);
+  const [blogposts, setBlogposts] = useState(null);
 
-    useEffect(() => {
-      axios.get(baseURL).then((response) => {
-        setPost(response.data);
-      });
-    }, []);
+  useEffect(() => {
+    axios.get(blogpostsURL).then((response) => {
+      setBlogposts(response.data);
+    });
+  }, []);
 
-    const [fpdeals, setFpdeals] = useState(null);
+  const [fpdeals, setFpdeals] = useState(null);
 
-    useEffect(() => {
-      axios.get(dealURL).then((response) => {
-        setFpdeals(response.data);
-      });
-    }, []);
+  useEffect(() => {
+    axios.get(dealsURL).then((response) => {
+      setFpdeals(response.data);
+    });
+  }, []);
 
+  // =====================
+  // =====================
+  // set some defaults
 
-  if (!post) return null;
+  if (!blogposts) setBlogposts([
+    {
+        "contents": "Whether you like cooking or not, an Instant Pot is a kitchen tool that you need to add to your kitchen. I intensely dislike cooking, but my Instant Pot makes cooking delicious meals super easy, fast, and, dare I say it, fun! ",
+        "created_at": null,
+        "id": 1,
+        "modified_at": null,
+        "owner_id": 1,
+        "title": "Why the Instant Pot is the #1 Cooking Tool You Need Right Now"
+    }])
+
+  if (!fpdeals) setFpdeals([
+    {
+        "created_at": null,
+        "description": "check the details",
+        "id": 1,
+        "modified_at": null,
+        "name": "free lift pass",
+        "owner_id": 1,
+        "valid_until": "2022-12-12T00:00:00"
+    }])
+
+  // =====================
+  // =====================
+
+  if (!blogposts) return null;
   if (!fpdeals) return null;
+  
+  const bannerLine = "回贈計數機"
+
   return (
     <>
       <Header />
@@ -83,10 +113,7 @@ function FrontPageDeals() {
         }}
       >
 
-
         <Container>
-
-
           <Grid
             container
             item
@@ -104,7 +131,7 @@ function FrontPageDeals() {
                 },
               })}
             >
-              {post.title}
+              {bannerLine}
             </MKTypography>
 
           </Grid>
@@ -112,7 +139,7 @@ function FrontPageDeals() {
       </MKBox>
 
       <Deals fpdeals={fpdeals}/>
-      <Articles fpdeals={fpdeals}/>
+      <Articles blogposts={blogposts}/>
       
 
     </>
