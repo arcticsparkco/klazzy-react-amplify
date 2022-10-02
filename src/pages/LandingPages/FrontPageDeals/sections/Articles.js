@@ -26,7 +26,7 @@ import MKTypography from "components/MKTypography";
 // Material Kit 2 PRO React examples
 import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 
-import team1 from "assets/images/team-5.jpg";
+// import team1 from "assets/images/team-5.jpg";
 
 
 function Articles({blogposts}) {
@@ -67,10 +67,10 @@ function Articles({blogposts}) {
             {blogposts.map((blogpost) => {
                 return (
 
-                  <Grid item xs={12} lg={6}>
+                  <Grid item xs={12} lg={6} key={blogpost.id}> 
                     <MKBox mb={1}>
                       <HorizontalTeamCard
-                        image={team1}
+                        image="https://picsum.photos/400"
                         name={blogpost.title}
                         position={{ color: "info", label: "Hot Deal" }}
                         description={blogpost.contents}

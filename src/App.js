@@ -43,6 +43,8 @@ import FrontPageDeals from "pages/LandingPages/FrontPageDeals";
 
 // Material Kit 2 PRO React routes
 import routes from "routes";
+import customRoutes from "custom.routes";
+
 import footerRoutes from "footer.routes";
 
 ReactGA.initialize("G-Y7ME825BDG");
@@ -76,7 +78,7 @@ export default function App() {
     <>
       <Helmet>
         <title>klazzy shopper</title>
-        <meta name="description" content="shop smart. shop klazzy" />
+        <meta name="description" content="shop smart. shop with klazzy" />
         <link rel="canonical" href="https://www.klazzy.net" />
       </Helmet>
 
@@ -84,7 +86,7 @@ export default function App() {
         <CssBaseline />
   
         <DefaultNavbar
-          routes={routes}
+          routes={customRoutes}
         />
   
         <Routes>

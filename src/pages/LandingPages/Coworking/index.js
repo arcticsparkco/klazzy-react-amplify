@@ -44,16 +44,7 @@ import bgImage from "assets/images/bg-coworking.jpeg";
 function Coworking() {
   return (
     <>
-      <DefaultNavbar
-        routes={routes}
-        action={{
-          type: "external",
-          route: "https://www.creative-tim.com/product/material-kit-pro-react",
-          label: "buy now",
-          color: "info",
-        }}
-        sticky
-      />
+
       <MKBox
         minHeight="75vh"
         width="100%"
@@ -156,9 +147,7 @@ function Coworking() {
           </MKBox>
         </Container>
       </Card>
-      <MKBox pt={6} px={1} mt={6}>
-        <DefaultFooter content={footerRoutes} />
-      </MKBox>
+
     </>
   );
 }

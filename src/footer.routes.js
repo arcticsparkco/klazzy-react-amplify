@@ -27,14 +27,7 @@ export default {
     route: "/",
   },
   socials: [
-    {
-      icon: <FacebookIcon />,
-      link: "https://www.facebook.com/go_klazzy/",
-    },
-    {
-      icon: <YouTubeIcon />,
-      link: "https://www.youtube.com/channel/go_klazzy",
-    },
+
   ],
   menus: [
     {
@@ -59,7 +52,7 @@ export default {
       ],
     },
     {
-      name: "browse",
+      name: "Browse",
       items: [
         {
           name: "By Deal",

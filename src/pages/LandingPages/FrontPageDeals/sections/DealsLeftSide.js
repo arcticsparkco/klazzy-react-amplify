@@ -33,7 +33,6 @@ import DealCard from "pages/LandingPages/FrontPageDeals/components/DealCard";
 
 function DealsLeftSide({fpdeals}) {
 
-  console.log(fpdeals)
   return (
     <>
         <Grid container spacing={2}>

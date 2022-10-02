@@ -91,7 +91,7 @@ function FrontPageDeals() {
   if (!blogposts) return null;
   if (!fpdeals) return null;
   
-  const bannerLine = "回贈計數機"
+  const bannerLine = "購物攻略"
 
   return (
     <>
