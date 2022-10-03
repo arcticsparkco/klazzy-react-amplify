@@ -39,7 +39,7 @@ import { red } from '@mui/material/colors';
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function DealCard({ image, title, description, owner, action }) {
+function DealCard({ id, image, url, title, description, owner, action }) {
 
   return (
     <Card 
@@ -63,7 +63,7 @@ function DealCard({ image, title, description, owner, action }) {
         component="img"
         height="200"
         image={image}
-        alt={title}
+        alt={id}
       />
 
 
@@ -79,16 +79,15 @@ function DealCard({ image, title, description, owner, action }) {
 
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="Like" >
           <Icon sx={{ fontWeight: "bold" }}>thumb_up</Icon>
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton aria-label="comment">
           <Icon sx={{ fontWeight: "bold" }}>comment</Icon>
         </IconButton>
-        <IconButton aria-label="share">
-          <Icon sx={{ fontWeight: "bold" }}>share</Icon>
+        <IconButton aria-label="link" href={url}>
+          <Icon sx={{ fontWeight: "bold" }}>link</Icon>
         </IconButton>
-
       </CardActions>
 
       {/*
@@ -130,7 +129,9 @@ function DealCard({ image, title, description, owner, action }) {
 
 // Typechecking props for the DealCard
 DealCard.propTypes = {
+  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   owner: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,

@@ -62,34 +62,15 @@ function FrontPageDeals() {
 
   // =====================
   // =====================
-  // set some defaults
+  // set some dummy data to prevent failure
 
-  if (!blogposts) setBlogposts([
-    {
-        "contents": "Whether you like cooking or not, an Instant Pot is a kitchen tool that you need to add to your kitchen. I intensely dislike cooking, but my Instant Pot makes cooking delicious meals super easy, fast, and, dare I say it, fun! ",
-        "created_at": null,
-        "id": 1,
-        "modified_at": null,
-        "owner_id": 1,
-        "title": "Why the Instant Pot is the #1 Cooking Tool You Need Right Now"
-    }])
 
-  if (!fpdeals) setFpdeals([
-    {
-        "created_at": null,
-        "description": "check the details",
-        "id": 1,
-        "modified_at": null,
-        "name": "free lift pass",
-        "owner_id": 1,
-        "valid_until": "2022-12-12T00:00:00"
-    }])
 
   // =====================
   // =====================
 
-  if (!blogposts) return null;
-  if (!fpdeals) return null;
+  // if (!blogposts) return null;
+  // if (!fpdeals) return null;
   
   const bannerLine = "購物攻略"
 
@@ -138,8 +119,8 @@ function FrontPageDeals() {
         </Container>
       </MKBox>
 
-      <Deals fpdeals={fpdeals}/>
-      <Articles blogposts={blogposts}/>
+      {fpdeals ? <Deals fpdeals={fpdeals}/> : null }
+      {blogposts ? <Articles blogposts={blogposts}/> : null }
       
 
     </>

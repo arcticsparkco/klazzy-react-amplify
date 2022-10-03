@@ -42,9 +42,11 @@ function DealsLeftSide({fpdeals}) {
                   <Grid item xs={12} md={4} lg={3} key={deal.id}>
                     <MKBox mt={5}>
                     <DealCard
-                      image="https://picsum.photos/200"
+                      id={deal.id}
+                      image={deal.img}
+                      url={deal.url}
                       title={deal.name}
-                      owner={deal.owner_id}
+                      owner={deal.deal_creator.name}
                       description={deal.description}
                       action={{
                         type: "internal",

@@ -46,10 +46,10 @@ function Header() {
     >
       <SwiperSlide>
         <SliderHeader
-          image={bg1}
-          label="最新優惠"
-          title="食飯簽卡高達8.6%現金回贈"
-          description="Wealth creation is an evolutionarily recent positive-sum game. Status is an old zero-sum game. Those attacking wealth creation are often just seeking status."
+          image="https://images.pexels.com/photos/1850595/pexels-photo-1850595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          label="Promotions"
+          title="Dining Offer - Up to 5% RewardCash Rebate"
+          description="Savour the good times together"
           cards={[
             {
               variant: "gradient",
@@ -80,10 +80,10 @@ function Header() {
       </SwiperSlide>
       <SwiperSlide>
         <SliderHeader
-          image={bg2}
-          label="淘寶攻略"
-          title="【淘寶集運】13大集運服務、運費比較"
-          description="港人愈來愈習慣於淘寶購物，上淘寶找便宜好貨已蔚然成風。"
+          image="https://ec4ulimited.com/wp-content/uploads/2018/01/taobao.jpg"
+          label="Taobao"
+          title="Taobao Shipping Comparison for 13 Major Shipping Providers"
+          description="As more of our turn to Taobao for shopping, choosing a good shipping provider will save you headache and costs. Find the best one for your situation。"
           cards={[
             {
               variant: "contained",
@@ -114,9 +114,9 @@ function Header() {
       </SwiperSlide>
       <SwiperSlide>
         <SliderHeader
-          image={bg3}
-          label="懶人"
-          title="信用卡攻略"
+          image="https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          label="Lazy"
+          title="Credit Card Strategy Guide"
           description="You’re spending time to save money when you should be spending money to save time."
           cards={[
             {

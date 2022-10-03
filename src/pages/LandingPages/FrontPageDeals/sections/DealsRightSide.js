@@ -25,13 +25,6 @@ import MKBox from "components/MKBox";
 // Material Kit 2 PRO React components
 // import SimpleBookingCard from "examples/Cards/BookingCards/SimpleBookingCard";
 
-// Images
-// import product1 from "assets/images/products/product-1-min.jpg";
-// import product2 from "assets/images/products/product-2-min.jpg";
-// import product3 from "assets/images/products/product-3-min.jpg";
-// import product4 from "assets/images/products/product-5-min.jpg";
-// import product5 from "assets/images/products/product-6-min.jpg";
-// import product6 from "assets/images/products/product-7-min.jpg";
 
 function DealsRightSide() {
 
