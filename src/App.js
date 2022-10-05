@@ -44,7 +44,6 @@ import FrontPageDeals from "pages/LandingPages/FrontPageDeals";
 // Material Kit 2 PRO React routes
 import routes from "routes";
 import customRoutes from "custom.routes";
-
 import footerRoutes from "footer.routes";
 
 ReactGA.initialize("G-Y7ME825BDG");

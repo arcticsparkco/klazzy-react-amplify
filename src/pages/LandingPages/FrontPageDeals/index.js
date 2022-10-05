@@ -37,10 +37,14 @@ import Articles from "pages/LandingPages/FrontPageDeals/sections/Articles";
 // import Faq from "pages/LandingPages/FrontPageDeals/sections/Faq";
 // import Contact from "pages/LandingPages/FrontPageDeals/sections/Contact";
 
+
+import { config } from 'environments/Constants'
+var url = config.url.API_URL
+
 const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
 
-const blogpostsURL = "http://0.0.0.0:5000/api/v1/blogposts/";
-const dealsURL = "http://0.0.0.0:5000/api/v1/deals/";
+const blogpostsURL = config.url.API_URL + "blogposts/";
+const dealsURL = config.url.API_URL + "deals/";
 
 function FrontPageDeals() {
 

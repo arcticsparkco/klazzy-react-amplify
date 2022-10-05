@@ -114,7 +114,7 @@ function AboutUs() {
               have the opportunity to play this game
             </MKTypography>
             <MKButton color="default" sx={{ color: ({ palette: { dark } }) => dark.main }}>
-              create account
+              Join Us
             </MKButton>
             <MKTypography variant="h6" color="white" mt={8} mb={1}>
               Find us on
