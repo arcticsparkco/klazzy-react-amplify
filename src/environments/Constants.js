@@ -2,7 +2,7 @@
 
 const prod = {
  url: {
-  API_URL: "http://klazzy-flask-dev.ap-southeast-1.elasticbeanstalk.com/api/v1/"
+  API_URL: "https://klazzy-flask-dev.ap-southeast-1.elasticbeanstalk.com/api/v1/"
  }
 };
 
@@ -17,4 +17,5 @@ const dev = {
 export const config = process.env.NODE_ENV === "development" ? dev : prod;
 
 console.log(process.env.NODE_ENV)
-console.log(config)
+console.log(config.url.API_URL)
+// console.log(process.env)
