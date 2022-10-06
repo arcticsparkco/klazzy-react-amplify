@@ -1,6 +1,7 @@
 {
   "name": "klazzy-react-amplify",
   "version": "0.1.0",
+  "homepage": "https://www.klazzy.net",
   "private": true,
   "dependencies": {
     "@emotion/cache": "^11.10.3",
