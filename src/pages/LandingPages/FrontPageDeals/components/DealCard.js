@@ -133,7 +133,7 @@ DealCard.propTypes = {
   image: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  owner: PropTypes.number.isRequired,
+  owner: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   action: PropTypes.shape({
     type: PropTypes.oneOf(["external", "internal"]).isRequired,

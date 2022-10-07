@@ -37,7 +37,7 @@ import Articles from "pages/LandingPages/FrontPageDeals/sections/Articles";
 // import Contact from "pages/LandingPages/FrontPageDeals/sections/Contact";
 
 import { config } from 'environments/Constants'
-var url = config.url.API_URL
+// var url = config.url.API_URL
 
 // const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
 
