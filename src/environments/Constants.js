@@ -2,7 +2,7 @@
 
 const prod = {
  url: {
-  API_URL: "https://klazzy-flask-dev.ap-southeast-1.elasticbeanstalk.com/api/v1/"
+  API_URL: "https://api.klazzy.net/api/v1/"
  }
 };
 
