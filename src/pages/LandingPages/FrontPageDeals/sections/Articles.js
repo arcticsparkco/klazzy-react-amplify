@@ -30,6 +30,7 @@ import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
 
 
 function Articles({blogposts}) {
+  if (!blogposts) return null;
 
   return (
     <MKBox

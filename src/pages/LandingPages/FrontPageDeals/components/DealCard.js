@@ -39,8 +39,8 @@ import { red } from '@mui/material/colors';
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function DealCard({ id, image, url, title, description, owner, action }) {
-
+function DealCard({ id, slug, image, url, title, description, owner, action }) {
+  // console.log(slug)
   return (
     <Card 
       sx={{ maxWidth: 300 }}
@@ -82,9 +82,11 @@ function DealCard({ id, image, url, title, description, owner, action }) {
         <IconButton aria-label="Like" >
           <Icon sx={{ fontWeight: "bold" }}>thumb_up</Icon>
         </IconButton>
+        <Link to={"/deal/" + slug } >
         <IconButton aria-label="comment">
           <Icon sx={{ fontWeight: "bold" }}>comment</Icon>
         </IconButton>
+        </Link>
         <IconButton aria-label="link" href={url}>
           <Icon sx={{ fontWeight: "bold" }}>link</Icon>
         </IconButton>
@@ -130,6 +132,7 @@ function DealCard({ id, image, url, title, description, owner, action }) {
 // Typechecking props for the DealCard
 DealCard.propTypes = {
   id: PropTypes.number.isRequired,
+  slug: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
