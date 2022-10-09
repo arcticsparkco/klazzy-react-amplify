@@ -4,13 +4,14 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
-import AboutUs from "layouts/pages/company/about-us";
+import AboutUs from "pages/Company/AboutUs";
 
 import ContactUs from "layouts/pages/support/contact-us";
 import Faq from "layouts/pages/support/faq";
 import Privacy from "layouts/pages/support/privacy";
 
-
+import AllDeals from "pages/Deals/AllDeals";
+import DealsByCreditCard from "pages/Deals/DealsByCreditCard";
 
 // Material Kit 2 PRO React components
 import MKTypography from "components/MKTypography";
@@ -34,18 +35,18 @@ export default {
       name: "company",
       items: [
         {   
-          name: "about us",
-          route: "/pages/company/about-us",
+          name: "about",
+          route: "/about",
           component: <AboutUs />,
         },
         {
           name: "privacy",
-          route: "/pages/support/privacy",
+          route: "/privacy",
           component: <Privacy />,
         },
         {
           name: "contact us",
-          route: "/pages/support/contact-us",
+          route: "/contact",
           component: <ContactUs />,
         },
         
@@ -56,13 +57,13 @@ export default {
       items: [
         {
           name: "By Deal",
-          route: "/pages/support/contact-us",
-          component: <ContactUs />,
+          route: "/deals/all",
+          component: <AllDeals />,
         },
         {
           name: "By Credit Card",
-          route: "/pages/support/contact-us",
-          component: <ContactUs />,
+          route: "/deals/creditcard",
+          component: <DealsByCreditCard />,
         },
       ],
     },

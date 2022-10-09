@@ -98,6 +98,10 @@ import Tables from "layouts/sections/elements/tables";
 import Toggles from "layouts/sections/elements/toggles";
 import Typography from "layouts/sections/elements/typography";
 
+import AllDeals from "pages/Deals/AllDeals";
+import DealsByCreditCard from "pages/Deals/DealsByCreditCard";
+
+
 const routes = [
   {
     name: "pages",
@@ -105,6 +109,27 @@ const routes = [
     columns: 3,
     rowsPerColumn: 2,
     collapse: [
+      {
+        name: "klazzy pages",
+        collapse: [
+          {
+            name: "all deals",
+            route: "/deals/all",
+            component: <AllDeals />,
+          },
+          {
+            name: "deals by credit card",
+            route: "/deals/creditcard",
+            component: <DealsByCreditCard />,
+          },
+          {
+            name: "demo",
+            route: "/demo",
+            component: <Rental />,
+          },
+        ],
+      },
+
       {
         name: "landing pages",
         collapse: [

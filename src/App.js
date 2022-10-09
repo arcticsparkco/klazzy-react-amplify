@@ -40,6 +40,13 @@ import theme from "assets/theme";
 import FrontPageDeals from "pages/LandingPages/FrontPageDeals";
 
 
+import AboutUs from "layouts/pages/company/about-us";
+import ContactUs from "layouts/pages/support/contact-us";
+import Faq from "layouts/pages/support/faq";
+import Privacy from "layouts/pages/support/privacy";
+import ErrorPage from "pages/Support/ErrorPage";
+import DealDetail from "pages/DealDetail";
+
 
 // Material Kit 2 PRO React routes
 import routes from "routes";
@@ -58,17 +65,19 @@ export default function App() {
   }, [pathname]);
 
   const getRoutes = (allRoutes) =>
+  
     allRoutes.map((route) => {
       if (route.collapse) {
         return getRoutes(route.collapse);
       }
 
       if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
+        return <Route exact path={route.route} element={route.component} key={route.name} />;
       }
 
       return null;
     });
+
 
   ReactGA.send("pageview");
 
@@ -77,7 +86,7 @@ export default function App() {
     <>
       <Helmet>
         <title>klazzy shopper</title>
-        <meta name="description" content="shop smart. shop with klazzy" />
+        <meta name="description" content="shop smart. shop klazzy" />
         <link rel="canonical" href="https://www.klazzy.net" />
       </Helmet>
 
@@ -87,11 +96,22 @@ export default function App() {
         <DefaultNavbar
           routes={customRoutes}
         />
-  
+        
+        
+
+
         <Routes>
+          <Route path="/deal/:slug" element={<DealDetail/>} />
+          {getRoutes(customRoutes)}
           {getRoutes(routes)}
+          {/*{getRoutes(footerRoutes.menus)}*/}
+          <Route exact path="/about" element={<AboutUs />} />
+          <Route exact path="/contact" element={<ContactUs />} />
+          <Route exact path="/privacy" element={<Privacy />} />
+          
           <Route path="/" element={<FrontPageDeals />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<ErrorPage />} />
+          {/*<Route path="*" element={<Navigate to="/" />} />*/}
         </Routes>
         <MKBox pt={6} px={1} mt={6}>
           <DefaultFooter 

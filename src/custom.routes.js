@@ -40,6 +40,9 @@ Coded by www.creative-tim.com
 import Icon from "@mui/material/Icon";
 
 // Pages
+import AllDeals from "pages/Deals/AllDeals";
+import DealsByCreditCard from "pages/Deals/DealsByCreditCard";
+
 import CoworkingPage from "layouts/pages/landing-pages/coworking";
 import Rental from "layouts/pages/landing-pages/rental";
 import AboutUs from "layouts/pages/company/about-us";
@@ -57,14 +60,14 @@ const routes = [
   {
     name: "all deals",
     icon: <Icon>article</Icon>,
-    route: "/pages/landing-pages/coworking",
-    component: <CoworkingPage />,
+    route: "/deals/all",
+    component: <AllDeals />,
   },
   {
     name: "By Credit Card",
     icon: <Icon>article</Icon>,
-    route: "/pages/landing-pages/coworking",
-    component: <CoworkingPage />,
+    route: "/deals/creditcard",
+    component: <DealsByCreditCard />,
   },
 
 ];
