@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### TODO
+- Deal detail page
+- All Deals page - change to horizontal card
+- All Deals page by filter (ie: Credit Card / Category)
+- Blog post detail page
+- Product prices crowd price track
