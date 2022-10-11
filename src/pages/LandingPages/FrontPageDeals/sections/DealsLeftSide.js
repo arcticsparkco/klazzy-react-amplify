@@ -7,7 +7,8 @@ import MKBox from "components/MKBox";
 import DealCard from "pages/Deals/components/DealCard";
 
 function DealsLeftSide({fpdeals}) {
-  console.log(fpdeals)
+  // console.log(fpdeals)
+  if (!fpdeals) {return null}
 
   return (
     <>

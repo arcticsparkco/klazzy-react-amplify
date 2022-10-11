@@ -56,10 +56,10 @@ function Articles({blogposts}) {
         <Grid container>
           <Grid item xs={12} md={8} sx={{ mb: 6 }}>
             <MKTypography variant="h3" color="white">
-              精選文章
+              Featured Articles
             </MKTypography>
             <MKTypography variant="body2" color="white" opacity={0.8}>
-              查看所有
+              See all
             </MKTypography>
           </Grid>
         </Grid>

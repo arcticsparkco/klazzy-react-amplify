@@ -42,10 +42,10 @@ function Articles({fpdeals}) {
         <Grid container>
           <Grid item xs={12} md={8} sx={{ mb: 2 }}>
             <MKTypography variant="h3" >
-              精選優惠
+              Featured Deals
             </MKTypography>
             <MKTypography variant="body2" opacity={0.8}>
-              查看所有
+              See all
             </MKTypography>
           </Grid>
         </Grid>
